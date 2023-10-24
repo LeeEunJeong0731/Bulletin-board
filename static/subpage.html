@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>이미지 미리보기</title>
+  </head>
+  <body>
+    <h1>이미지 미리보기</h1>
+
+    <div id="imagePreview">
+      <img src="" alt="미리보기 이미지" id="previewImage" />
+    </div>
+
+    <div>
+      <h2>댓글:</h2>
+      <p id="commentPreview"></p>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageInput = document.getElementById("imageInput");
+        const commentInput = document.getElementById("commentInput");
+
+        // 이미지 파일 선택 시 미리보기 업데이트
+        imageInput.addEventListener("change", function () {
+          const previewImage = document.getElementById("previewImage");
+          const imageFile = imageInput.files[0];
+          const imageURL = URL.createObjectURL(imageFile);
+          previewImage.src = imageURL;
+        });
+
+        // 댓글 입력 시 미리보기 업데이트
+        commentInput.addEventListener("input", function () {
+          const commentPreview = document.getElementById("commentPreview");
+          commentPreview.textContent = commentInput.value;
+        });
+      });
+    </script>
+  </body>
+</html>
