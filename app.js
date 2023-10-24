@@ -11,10 +11,10 @@ const server = http.createServer((req, res) => {
     const filePath = "./static/index.html";
     fs.readFile(filePath, (err, data) => {
       if (err) {
-        res.writeHead(404, { "Content-Type": "text/html" });
+        res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
         res.end("404 Not Found");
       } else {
-        res.writeHead(200);
+        res.writeHead(200, { "Content-Type": "text/html; charset=UTF-8" });
         res.end(data);
       }
     });
