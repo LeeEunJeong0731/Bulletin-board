@@ -18,7 +18,6 @@ const server = http.createServer((req, res) => {
         res.end(data);
       }
     });
-  } else if (pathName === "/subpage") {
     fs.readFile("./static/subpage.html", (err, data) => {
       if (err) {
         res.writeHead(404, { "Content-Type": "text/html; charset=UTF-8" });
