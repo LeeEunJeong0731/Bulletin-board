@@ -1,8 +1,46 @@
 <!DOCTYPE html>
 <html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <head>
     <title>게시판</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        color: #333;
+      }
+      form {
+        margin: 20px;
+      }
+      #imageInput {
+        display: block;
+        margin: 10px auto;
+      }
+      #commentInput {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px 0;
+        resize: none;
+      }
+      #postButton {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #postButton:hover {
+        background-color: #0056b3;
+      }
+    </style>
   </head>
   <body>
     <h1>게시판</h1>
