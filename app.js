@@ -55,8 +55,6 @@ const server = http.createServer((req, res) => {
     initializeDatabase();
     const database = readDatabase();
 
-    console.log(database);
-
     // 이제 데이터베이스 변수 `database`를 사용하여 데이터를 읽고 쓸 수 있습니다.
   }
 });
