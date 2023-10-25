@@ -19,26 +19,21 @@ ocument.addEventListener("DOMContentLoaded", function () {
     formData.append("comment", comment); // 댓글 내용
 
     // 서버로 데이터 전송
-    fetch("http://localhost:3000/upload", {
-      method: "POST",
-      body: formData,
+    fetch("/goto-subpage", {
+      method: "GET",
     })
       .then((response) => {
         if (response.status === 200) {
-          return response.text();
+          // 서버가 200 OK 응답을 보내면 서브페이지로 이동
+          window.location.href = "/subpage";
         } else {
-          throw new Error("서버 응답 오류");
+          // 오류 처리
+          console.error("서버 응답 오류");
         }
-      })
-      .then((data) => {
-        // 서버 응답 처리
-        console.log("서버 응답:", data);
-        alert("게시물이 성공적으로 업로드되었습니다.");
       })
       .catch((error) => {
         // 오류 처리
         console.error("오류 발생:", error);
-        alert("오류 발생: " + error.message);
       });
   });
 });
