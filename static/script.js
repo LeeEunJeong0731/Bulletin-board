@@ -19,7 +19,7 @@ ocument.addEventListener("DOMContentLoaded", function () {
     formData.append("comment", comment); // 댓글 내용
 
     // 서버로 데이터 전송
-    fetch("/goto-subpage", {
+    fetch("/subpage", {
       method: "GET",
     })
       .then((response) => {
